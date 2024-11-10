@@ -1,4 +1,3 @@
-
 from openpyxl.workbook import Workbook # type: ignore
 from openpyxl import load_workbook # type: ignore
 
@@ -6,11 +5,14 @@ from openpyxl import load_workbook # type: ignore
 # wb = Workbook()
 
 
+# load existing spreadsheet
+# wb = load_workbook()
 
 # load existing spreadsheet
-
 wb = load_workbook('hello.xlsx')
 
+# create an active worksheet
 ws = wb.active
 
-print("hello World!")
+# Print something from the spreadsheet
+print(ws["A2"])
