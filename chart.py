@@ -10,6 +10,8 @@ from openpyxl.chart import (
     LineChart,
     LineChart3D
 )
+# from openpyxl.drawing.line import LineProperties
+# from openpyxl.drawing.colors import ColorChoice
 # load existing spreadsheet
 
 wb = load_workbook('hello.xlsx')
@@ -30,6 +32,9 @@ chart.set_categories(labels)
 
 # Add a title
 chart.title = "Employee Salaries"
+
+# Set line color for the data series
+chart.series[0].graphicalProperties.line.solidFill = "FF0000"
 
 # Place the chart on the spreadsheet
 ws.add_chart(chart, "E2")
@@ -62,4 +67,4 @@ for row in data:
     ws.append(row)
 
 wb.save('hello3.xlsx')
-print('File Saved')
+print('File Saved' + ' yup')
